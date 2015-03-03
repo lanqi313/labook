@@ -35,7 +35,7 @@ Route::get('insert_book', function()
 }); 
 Route::post('delete_book','BookController@deleteBook');
 Route::post('insert_book','BookController@insertBook');
-  Route::get('logout',function()
+Route::get('logout',function()
   {
     Auth::logout();
     return Redirect::to('auth/login');

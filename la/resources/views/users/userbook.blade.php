@@ -2,7 +2,7 @@
 	<body>
                    @include('auth.check')
                    {{$name = Auth::user()->name  }}
-                <form name="input" action="findbook'" method="post">
+                <form name="input" action="findbook" method="post">
                 查找图书信息: 
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="text" name="bookname" />
