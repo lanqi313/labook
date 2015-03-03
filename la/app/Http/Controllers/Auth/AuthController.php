@@ -20,6 +20,21 @@ class AuthController extends Controller {
 
 	use AuthenticatesAndRegistersUsers;
 
+	public function getLogout()
+	{
+		$this->auth->logout();
+
+		return redirect('auth/login');
+	}
+	public function redirectPath()
+	{
+		if (property_exists($this, 'redirectPath'))
+		{
+			return $this->redirectPath;
+		}
+
+		return property_exists($this, 'redirectTo') ? $this->redirectTo : '/book';
+	}
 	/**
 	 * Create a new authentication controller instance.
 	 *
